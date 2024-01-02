@@ -1,0 +1,14 @@
+{
+  "appName": "Kabi Task",
+  "controlInternetConnectionAndTryAgain": "Please check your internet!",
+  "sthWentWrong": "Something wrong!",
+  "posts": "POSTS",
+  "title": "Title",
+  "body": "Body",
+  "create_post": "CREATE POST",
+  "appBarTitle": "Posts Board",
+  "show": "SHOW",
+  "delete": "DELETE",
+  "noJobsMessage": "There is no Jobs to show!",
+  "tryAgain": "Try Again"
+}
