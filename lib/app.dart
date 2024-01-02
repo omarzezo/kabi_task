@@ -17,7 +17,7 @@ class App extends StatelessWidget {
       behavior: HitTestBehavior.translucent,
       child: ScreenUtilInit(
         builder: (_, __) => MaterialApp(
-          theme: AppTheme().theme,
+          // theme: AppTheme().theme,
           title: LocaleKeys.appName.locale,
           locale: context.locale,
           localizationsDelegates: context.localizationDelegates,

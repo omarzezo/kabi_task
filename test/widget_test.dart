@@ -12,39 +12,39 @@ import 'package:kabi_task/base/models/posts_response_model.dart';
 import 'package:kabi_task/main.dart';
 import 'package:kabi_task/app.dart';
 import 'package:kabi_task/screens/kabi_board/kabi_service.dart';
-void main() {
-  late KabiService service;
-  setUp(() {
-    WidgetsFlutterBinding.ensureInitialized();
-    service = KabiService();
-  });
-
-  test("Job Service Test", () async {
-    final response = await service.getPosts();
-
-    expect(response.isSuccess, true);
-    expect(response.data != null, true);
-
-    final jobs = PostsResponseModel.listFromJson(response.data);
-
-    expect(jobs.isNotEmpty, true);
-  });
-}
 // void main() {
-//   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-//     // Build our app and trigger a frame.
-//     await tester.pumpWidget(const App());
+//   late KabiService service;
+//   setUp(() {
+//     WidgetsFlutterBinding.ensureInitialized();
+//     service = KabiService();
+//   });
 //
-//     // Verify that our counter starts at 0.
-//     expect(find.text('0'), findsOneWidget);
-//     expect(find.text('1'), findsNothing);
+//   test("Job Service Test", () async {
+//     final response = await service.getPosts();
 //
-//     // Tap the '+' icon and trigger a frame.
-//     await tester.tap(find.byIcon(Icons.add));
-//     await tester.pump();
+//     expect(response.isSuccess, true);
+//     expect(response.data != null, true);
 //
-//     // Verify that our counter has incremented.
-//     expect(find.text('0'), findsNothing);
-//     expect(find.text('1'), findsOneWidget);
+//     final jobs = PostsResponseModel.listFromJson(response.data);
+//
+//     expect(jobs.isNotEmpty, true);
 //   });
 // }
+void main() {
+  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+    // Build our app and trigger a frame.
+    await tester.pumpWidget(const App());
+
+    // Verify that our counter starts at 0.
+    expect(find.text('0'), findsOneWidget);
+    expect(find.text('1'), findsNothing);
+
+    // Tap the '+' icon and trigger a frame.
+    await tester.tap(find.byIcon(Icons.add));
+    await tester.pump();
+
+    // Verify that our counter has incremented.
+    expect(find.text('0'), findsNothing);
+    expect(find.text('1'), findsOneWidget);
+  });
+}

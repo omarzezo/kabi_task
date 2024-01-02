@@ -7,14 +7,13 @@ import 'package:kabi_task/app.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
-  runZonedGuarded<Future<void>>(() async {
-    runApp(EasyLocalization(
+  runApp(
+    EasyLocalization(
       supportedLocales: const [Locale('en')],
-      fallbackLocale: const Locale('en'),
       path: 'assets/translations',
-      child: const App(),
-    ));
-  },
-  (_, __) {},
+      startLocale: const Locale('en'),
+      fallbackLocale: const Locale('en'),
+      child:const App(),
+    ),
   );
 }

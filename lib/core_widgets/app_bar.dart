@@ -22,7 +22,7 @@ AppBar appBar({String? text,bool fromMainCategory = false,bool isTimeLogged=fals
             Navigator.pop(context,refreshCheck);
           },icon:
           const Icon(Icons.arrow_back_ios_rounded,color:AppColors.black)),
-        ):const SizedBox(),
+        ):const SizedBox(width:20,),
         Center(child: KText(title: text??'', size: PSize.large))
       ],
     ),

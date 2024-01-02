@@ -16,14 +16,15 @@ import '../base/constants/app_constants.dart';
 
 
 class CreatePost extends StatefulWidget {
-  String title,body;
-  CreatePost({Key? key,required this.title,required this.body}) : super(key: key);
+  final String title,body;
+  const CreatePost({Key? key,required this.title,required this.body}) : super(key: key);
   @override
   CreatePostState createState() => CreatePostState();
 }
 
 class CreatePostState extends State<CreatePost>{
-  // String title='',body='';
+ late String title=widget.title;
+  late String body=widget.body;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,19 +47,19 @@ class CreatePostState extends State<CreatePost>{
         Padding(padding: const EdgeInsets.only(top:5,bottom:4),
           child: KText(title:LocaleKeys.title.locale, size:PSize.large),
         ),
-        KTextField(initialText:widget.title,hintText:'', feedback:(value) {
-          widget.title=value??'';
+        KTextField(initialText:title,hintText:'', feedback:(value) {
+          title=value??'';
         }, validator:(value) => null,),
         Padding(padding: const EdgeInsets.only(top:14,bottom:4),
           child: KText(title:LocaleKeys.body.locale, size:PSize.large),
         ),
-        KTextField(initialText:widget.body,maxLines:6,maxLength:200,hintText:'', feedback:(value) {
-          widget.body=value??'';
+        KTextField(initialText:body,maxLines:6,maxLength:200,hintText:'', feedback:(value) {
+          body=value??'';
         }, validator:(value) => null,),
         Container(height:60,margin:const EdgeInsets.only(top:30),
           child: KButton(onPressed:() async {
-            if(widget.title.isNotEmpty||widget.body.isNotEmpty){
-            bool isSuccess =  await vm.createPost(1,widget.title,widget.body);
+            if(title.isNotEmpty||body.isNotEmpty){
+            bool isSuccess =  await vm.createPost(1,title,body);
             if(isSuccess){
               Navigator.pop(context,true);
             }

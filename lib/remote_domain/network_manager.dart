@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:convert';
-import 'dart:developer';
 import 'package:connectivity/connectivity.dart';
 import 'package:http/http.dart' as http;
 import 'package:kabi_task/utils/extensions/string_extension.dart';
@@ -55,8 +54,6 @@ class NetworkManager {
       String apiResponse = response.body;
       int statusCode = response.statusCode;
       var result = _decoder.convert(apiResponse);
-      print('statusCode>>'+statusCode.toString());
-      log('result>>'+result.toString());
       if (statusCode == 200||statusCode==201) {
         return NetworkResponse(isSuccess: true, data: result);
       } else {
